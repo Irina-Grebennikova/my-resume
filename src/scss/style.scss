@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+$lilac: #be3eed;
+$purple: #8e24aa;
+$white: #fff;
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.title {
+  margin: 0 -15px;
+  padding: 8px 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.1em;
+  background-color: $purple;
+}
+
+.purple-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: $purple;
+
+  &_extra {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  &__line {
+    flex: 1 1 auto;
+    height: 1.5px;
+    background-color: $purple;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid $purple;
+    border-radius: 50%;
+    img {
+      height: 16px;
+    }
+  }
+}
+
+.wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  font-family: Roboto;
+}
+
+.sidebar {
+  flex: 0 1 1100px;
+  padding: 15px;
+  color: $white;
+  background-color: $lilac;
+
+  &__photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 25px;
+
+    img {
+      width: 150px;
+      border-radius: 10px;
+    }
+  }
+}
+
+.main {
+  flex: 1 1 auto;
+  padding: 20px 15px 15px 20px;
+
+  &__title {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+  }
+
+  &__subtitle {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+}
+
+.short-info {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 15px;
+
+  img {
+    max-height: 20px;
+  }
+
+  &__item {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+  }
+}
+
+.circles {
+  display: flex;
+  gap: 5px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid $white;
+
+  &_filled {
+    background-color: $white;
+  }
+}
+
+.contacts {
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
+.languages {
+  padding-bottom: 15px;
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__language {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__language-name {
+    margin-bottom: 5px;
+  }
+}
+
+.skills {
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__skill-name {
+    margin-bottom: 5px;
+  }
+}
+
+.courses {
+  // .courses__content
+  &__content {
+    padding: 15px 0;
+    display: flex;
+    gap: 80px;
+  }
+  // .courses__organization
+  &__organization {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.1em;
+  }
+  // .courses__name
+  &__name {
+    font-size: 1.1em;
+    font-style: italic;
+  }
+}
+
+.about {
+  &__text {
+    padding: 15px 15px 20px 0;
+    line-height: 150%;
+  }
+}
+
+.projects {
+  // .projects__item
+  &__item {
+    margin-left: 20px;
+    color: $lilac;
+    font-size: 1.2em;
+    margin-top: 15px;
+  }
+  // .projects__project
+  &__project {
+    color: #000;
+    font-size: 16px;
+  }
+  &__link {
+    display: inline-block;
+    border-bottom: 2px solid $lilac;
+  }
+}
