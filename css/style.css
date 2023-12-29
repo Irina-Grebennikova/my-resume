@@ -143,7 +143,7 @@ h6 {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 1100px;
           flex: 0 1 1100px;
-  padding: 15px;
+  padding: 15px 15px 30px;
   color: #fff;
   background-color: #be3eed;
 }
@@ -168,7 +168,7 @@ h6 {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  padding: 20px 15px 15px 20px;
+  padding: 20px 15px 30px 20px;
 }
 .main__title {
   font-size: 1.4em;
@@ -275,12 +275,18 @@ h6 {
   margin-bottom: 5px;
 }
 
-.courses__content {
+.courses__course {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 130px 300px auto;
+  grid-template-columns: 130px 300px auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 15px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 80px;
+}
+.courses__course:not(:last-child) {
+  border-bottom: 1px dashed #be3eed;
 }
 .courses__organization {
   margin-bottom: 10px;
@@ -290,6 +296,41 @@ h6 {
 .courses__name {
   font-size: 1.1em;
   font-style: italic;
+}
+.courses__certificate {
+  height: 100px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.courses__certificate:not(.active):hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.courses__certificate.active {
+  position: fixed;
+  z-index: 1;
+  top: calc(50vh - 200px);
+  left: calc(50vw - 275px);
+  height: 400px;
+  width: 550px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.courses__mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .about__text {
@@ -310,4 +351,9 @@ h6 {
 .projects__link {
   display: inline-block;
   border-bottom: 2px solid #be3eed;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.projects__link:hover {
+  opacity: 0.8;
 }

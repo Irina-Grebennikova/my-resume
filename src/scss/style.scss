@@ -134,7 +134,7 @@ h6 {
 
 .sidebar {
   flex: 0 1 1100px;
-  padding: 15px;
+  padding: 15px 15px 30px;
   color: $white;
   background-color: $lilac;
 
@@ -153,7 +153,7 @@ h6 {
 
 .main {
   flex: 1 1 auto;
-  padding: 20px 15px 15px 20px;
+  padding: 20px 15px 30px 20px;
 
   &__title {
     font-size: 1.4em;
@@ -253,11 +253,16 @@ h6 {
 }
 
 .courses {
-  // .courses__content
-  &__content {
+  // .courses__course
+  &__course {
+    display: grid;
+    grid-template-columns: 130px 300px auto;
+    align-items: center;
     padding: 15px 0;
-    display: flex;
-    gap: 80px;
+
+    &:not(:last-child) {
+      border-bottom: 1px dashed $lilac;
+    }
   }
   // .courses__organization
   &__organization {
@@ -269,6 +274,38 @@ h6 {
   &__name {
     font-size: 1.1em;
     font-style: italic;
+  }
+  // .courses__certificate
+  &__certificate {
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:not(.active):hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &.active {
+      position: fixed;
+      z-index: 1;
+      top: calc(50vh - 200px);
+      left: calc(50vw - 275px);
+      height: 400px;
+      width: 550px;
+      object-fit: contain;
+      transition: all 0.5s;
+    }
+  }
+  // .courses__mask
+  &__mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -295,5 +332,10 @@ h6 {
   &__link {
     display: inline-block;
     border-bottom: 2px solid $lilac;
+    transition: 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
