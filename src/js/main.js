@@ -12,9 +12,13 @@ certificates.forEach((certificate) => {
 
     document.body.addEventListener(
       'click',
-      () => {
+      (e) => {
         certificate.classList.remove('active');
         mask.style.display = 'none';
+
+        if (e.target === certificate) {
+          window.open(certificate.dataset.link, '_blank');
+        }
       },
       { once: true }
     );

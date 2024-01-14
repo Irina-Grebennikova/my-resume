@@ -130,6 +130,10 @@ h6 {
   margin: 0 auto;
   display: flex;
   font-family: Roboto;
+
+  @media (max-width: 880px) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -219,6 +223,7 @@ h6 {
 
   &__language {
     display: flex;
+    gap: 10px;
     align-items: center;
     justify-content: space-between;
 
@@ -227,8 +232,12 @@ h6 {
     }
   }
 
-  &__language-name {
+  &__name {
     margin-bottom: 5px;
+  }
+
+  &__level {
+    text-align: right;
   }
 }
 
@@ -263,6 +272,24 @@ h6 {
     &:not(:last-child) {
       border-bottom: 1px dashed $lilac;
     }
+
+    @media (max-width: 650px) {
+      grid-template-columns: 0.5fr 1.5fr 1fr;
+    }
+
+    @media (max-width: 430px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 390px) {
+      column-gap: 5%;
+    }
+  }
+  // .courses__year
+  &__year {
+    @media (max-width: 390px) {
+      display: none;
+    }
   }
   // .courses__organization
   &__organization {
@@ -281,11 +308,6 @@ h6 {
     cursor: pointer;
     transition: transform 0.3s;
 
-    &:not(.active):hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-
     &.active {
       position: fixed;
       z-index: 1;
@@ -295,6 +317,20 @@ h6 {
       width: 550px;
       object-fit: contain;
       transition: all 0.5s;
+
+      @media (max-width: 620px) {
+        top: calc(50vh - 150px);
+        left: calc(50vw - 47.5%);
+        height: 300px;
+        width: 95%;
+      }
+    }
+
+    @media (hover: hover) {
+      &:not(.active):hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
     }
   }
   // .courses__mask
